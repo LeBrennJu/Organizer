@@ -1,0 +1,42 @@
+@import "../../assets/css/variables.css";
+.dashboard__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .dashboard__area{
+        background-color:var(--secondColor) ;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        display: grid;
+        grid-template-rows: repeat(2, 1fr); /* 2 lignes de taille égale */
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+        .widget--card__container{//Components widget card
+            border: 1px solid var(--baseColor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10%;
+            background-color: var(--border);
+            box-shadow: inset 0px 0px 1px 1px black;
+            margin:1px;
+            .icon-plus{
+                width: 50%;
+                height: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .svg-icon{
+                    cursor: pointer;
+                    filter: brightness(1);
+                    transition: filter 0.5s ease-in-out;
+                    color: #213547;
+                }
+                .svg-icon:hover{
+                    filter: brightness(1.3);
+                   
+                }
+            }
+        }
+        
+    }
+}

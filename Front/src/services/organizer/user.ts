@@ -24,9 +24,20 @@ export async function getUserByID(id: number) {
 export async function login(params : any) {
   
     try {
-      const response = await api.post(`login`, params);
-      return response.data;
+      const response = await api.post(`login`, params);      
+      console.log("🚀 ~ file: user.ts:29 ~ login ~ response:", response)
+      return response;
     } catch (error) {
       return error;
     }
   }
+export async function register(params : any) {
+
+  try {
+    const response = await api.post(`login`, params);      
+    console.log("🚀 ~ file: user.ts:29 ~ login ~ response:", response)
+    return response;
+  } catch (error) {
+    return error;
+  }
+}

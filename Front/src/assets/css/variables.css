@@ -1,0 +1,8 @@
+:root{
+    --baseColor: #1b2431;
+    --secondColor:#364c53;
+    --thirdColor: #81462e;
+    --transparent: rgba(255, 255, 255, .1);
+    --cream:#f4f0ea;
+    --border: #8b9b9f;
+}

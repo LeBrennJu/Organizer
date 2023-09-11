@@ -15,7 +15,7 @@ AppDataSource.initialize().then(async () => {
     app.use(bodyParser.json())
 
     // Configurez cors pour autoriser les requêtes depuis votre domaine front-end (http://localhost:5174)
-    const allowedOrigins = ['http://localhost:5174'];
+    const allowedOrigins = ['http://localhost:5173'];
     const corsOptions = {
         origin: function (origin, callback) {
             if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
