@@ -34,10 +34,10 @@ export async function login(params : any) {
 export async function register(params : any) {
 
   try {
-    const response = await api.post(`login`, params);      
+    const response = await api.post(`users`, params);      
     console.log("🚀 ~ file: user.ts:29 ~ login ~ response:", response)
     return response;
   } catch (error) {
     return error;
   }
-}
+} 

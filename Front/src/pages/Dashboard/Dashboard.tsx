@@ -8,11 +8,12 @@ const Dashboard = () => {
         <>
             <main className="dashboard__container">
                 <section className="dashboard__area">
-                {Array.from({ length: 6 }, (_, index) => (
-                    <WidgetCard key={index} />
-                ))}
+                    {Array.from({ length: 6 }, (_, index) => (
+                    <WidgetCard key={index} index={index} />
+                    ))}
                 </section>
             </main>
+
         </>
     );
 };

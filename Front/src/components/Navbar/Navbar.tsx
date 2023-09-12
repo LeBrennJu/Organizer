@@ -1,12 +1,20 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoginForm } from '../../store/authActions';
+import { selectLoginForm } from '../../store/authSlice';
+
 function Navbar() {
-  // Vérifiez si un token est présent dans le local storage
-  const hasToken = localStorage.getItem("token");
+  const hasToken = localStorage.getItem('token');
+  const dispatch = useDispatch();
+  const loginForm = useSelector(selectLoginForm);
+
+  const toggleLoginForm = () => {
+    dispatch(setLoginForm(!loginForm)); // Inversez la valeur de loginForm (true devient false, et vice versa)
+  };
 
   const handleLogout = () => {
-    // Supprimez le token du local storage
-    localStorage.removeItem("token");
-    // Effectuez une redirection en utilisant window.location.href
-    window.location.href = "/";
+    localStorage.removeItem('token');
+    window.location.href = '/';
   };
 
   return (
@@ -17,7 +25,11 @@ function Navbar() {
         {hasToken ? (
           <p onClick={handleLogout}>Déconnexion</p>
         ) : (
-          <p>Inscription</p>
+          <p>
+            <span onClick={toggleLoginForm}>
+              {loginForm ? 'Inscription' : 'Connexion'}
+            </span>
+          </p>
         )}
       </div>
     </header>

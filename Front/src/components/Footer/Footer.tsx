@@ -2,9 +2,9 @@
 import "./Footer.scss"
 
 function Footer() {
-    // Vérifiez si un token est présent dans le local storage
-    const hasToken = localStorage.getItem("token");
-    
+  // Vérifiez si un token est présent dans le local storage
+  const hasToken = localStorage.getItem("token");
+
   return (
     <>
     <div className="wrapper">

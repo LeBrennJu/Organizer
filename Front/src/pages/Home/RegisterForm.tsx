@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { register } from '../../services/organizer/user'; // Assurez-vous d'importer la fonction de création de compte appropriée
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoginForm } from '../../store/authActions';
+import { selectLoginForm } from '../../store/authSlice';
 
 const RegisterForm = () => {
+  const dispatch = useDispatch();
+  const loginForm = useSelector(selectLoginForm);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -28,11 +34,8 @@ const RegisterForm = () => {
     console.log("ici la response à l'inscription " + response);
 
     if (response.status === 200) {
-      localStorage.setItem("token", response.data);
-      window.location.href = "/board";
+      window.location.href = "/";
     }
-
-    // Ici la suite de l'appel à JWT Token, si nécessaire
   }
 
   const handleInputChange = (e) => {
