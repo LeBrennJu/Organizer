@@ -1,0 +1,54 @@
+{
+    "produits": {
+        //Schéma d'un produit
+        "_id" : "mongoId",
+        "nom" : "string",
+        "description" : "string",
+        "prix_unitaire": "number",
+        "discounts" : [
+            "mongoId", // discount_id
+            "mongoId", 
+            "mongoId"
+        ],
+        "created_at" : "timestamp",
+        "updatet_at" : "timestamp"
+    },
+
+    "clients": {
+        //Schéma d'un client
+        "_id": "mongoId",
+        "nom" : "string",
+        "adresse" : "string",
+        "email" : "string", // unique
+        "created_at" : "timestamp",
+        "updatet_at" : "timestamp"
+    },
+
+    "discounts" :{ // optionnel 
+        "_id": "mongoId",
+        "value": "number",
+        "start_date": "date",
+        "expiration_date" : "date"
+    },
+
+    "commandes": {
+        "_id":"mongoId",
+        "client_id" :"mongoId",
+        "date" : "date",
+        "delivered_at" : "date",
+        "discount": "mongoId", // pas obligatoire
+        "produits": [
+            
+            {
+                "produit_id": "mongoId", "quantité" : "number"
+            },
+            {
+                "produit_id": "mongoId", "quantité" : "number"
+            }
+        ],
+        
+        "created_at" : "timestamp",
+        "updated_at" : "timestamp"
+    }
+
+}

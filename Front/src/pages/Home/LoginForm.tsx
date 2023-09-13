@@ -17,7 +17,7 @@ const LoginForm = () => {
     console.log("Tentative de connexion avec email : " + email);
     const response = await login(formData)
     console.log("ici la response au login "+response)
-    if(response.status == 200 ){
+    if(response.status == 200 || response.status == 201 ){
       localStorage.setItem("token", response.data);
       window.location.href = "/board";
     }

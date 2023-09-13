@@ -24,7 +24,7 @@ export async function getUserByID(id: number) {
 export async function login(params : any) {
   
     try {
-      const response = await api.post(`login`, params);      
+      const response = await api.post(`user/login`, params);      
       console.log("🚀 ~ file: user.ts:29 ~ login ~ response:", response)
       return response;
     } catch (error) {
